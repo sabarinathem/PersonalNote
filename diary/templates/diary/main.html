@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+        h1{
+        display: inline;
+    }
+    #note{float: right;padding-left: 20px;font-style: italic;font-weight: 1000;}
+    #notes{float: right;padding-left: 20px;font-style: italic;font-weight: 1000;font-size: 20px;}
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dear Diary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                   {{request.user}} Diary
+                </h1>
+               
+                    <h1 id="note"><a href="{% url 'book:logout' %}">Logout</a></h1>
+                    <h1 id="note"><a href="{% url 'book:index' %}">Index</a></h1>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            {% block content %}
+        
+            {% endblock content %}
+        </div>
+</body>
+
+</html>

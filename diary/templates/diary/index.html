@@ -1,0 +1,26 @@
+{% extends 'diary/main.html' %}
+
+    
+{% block content %}
+
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <a href="{% url 'diary:add' %}">Add new entry</a>
+        </div>
+    </div>
+</article>
+{% for obj in diary %}
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <p>
+                <strong><a href="{% url 'diary:diary' obj.id %}">{{obj.date}}</a></strong>
+               
+            </p>
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+{% endblock content %}

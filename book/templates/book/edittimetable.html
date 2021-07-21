@@ -1,0 +1,40 @@
+{% extends 'book/main.html' %}
+{% load crispy_forms_tags %}
+    
+{% block content %}
+<head>
+    <style>
+        td{
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <a href="#">Addnote</a>
+        </div>
+    </div>
+</article>
+<br>
+
+<table>
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+          <form action="{% url 'book:edittimetable' %}" method="POST" class="uniForm" >
+              {% csrf_token %}
+             
+             <tr><td style="text-align: center; font-size: 20px;color: rgb(9, 84, 146);">Edit the TimeTable</td></tr>
+             <tr><td>{{form.media}}</td></tr>  
+             <tr><td>{{form.timetable}}</td></tr> 
+              <tr><td><input type="submit" value="submit"></td></tr>
+            </form>
+        </div>
+    </div>
+</article>
+</table>
+
+
+
+{% endblock content %}

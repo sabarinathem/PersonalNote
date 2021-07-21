@@ -1,0 +1,28 @@
+{% extends 'book/main.html' %}
+
+    
+{% block content %}
+{% for obj in timetable %}
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <a href="#"></a>
+        </div>
+    </div>
+</article>
+<br>
+
+
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+          
+               
+               <p>{{obj.timetable|safe}}</p>           
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+
+{% endblock content %}

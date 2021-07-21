@@ -1,0 +1,28 @@
+{% extends 'book/main.html' %}
+
+    
+{% block content %}
+
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <a href="#">Equations</a>
+        </div>
+    </div>
+</article>
+<br>
+
+{% for obj in subject %}
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+          
+               
+               <p><a href="{% url 'book:module_equation' obj.subject %}">{{obj.subject}}</a></p>           
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+
+{% endblock content %}

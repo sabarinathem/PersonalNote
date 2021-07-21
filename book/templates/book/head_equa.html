@@ -1,0 +1,28 @@
+{% extends 'book/main.html' %}
+
+    
+{% block content %}
+
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <a href="#">Heading-Equation</a>
+        </div>
+    </div>
+</article>
+<br>
+
+{% for obj in heading %}
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+          
+               
+               <p><a href="{% url 'book:equation' obj.heading %}">{{obj.heading}}</a></p>           
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+
+{% endblock content %}

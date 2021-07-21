@@ -1,0 +1,28 @@
+{% extends 'book/main.html' %}
+
+    
+{% block content %}
+{% for obj in content %}
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <a href="#">{{obj.heading}}</a>
+        </div>
+    </div>
+</article>
+<br>
+
+
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+          
+               
+               <p>{{obj.equation|safe}}</p>           
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+
+{% endblock content %}

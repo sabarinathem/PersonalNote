@@ -1,0 +1,39 @@
+{% extends 'book/main.html' %}
+
+    
+{% block content %}
+<head>
+    <style>
+        #right{
+            float: right;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+{% for obj in content %}
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <a href="#">{{obj.heading}}</a>
+            <a id="right" href="{% url 'book:delete_note' id.id %}">Delete</a>
+            <a id="right"  href="{% url 'book:edit_note' id.id %}">Edit</a>
+            
+        </div>
+    </div>
+</article>
+<br>
+
+
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+          
+               
+               <p>{{obj.content|safe}}</p>           
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+
+{% endblock content %}
